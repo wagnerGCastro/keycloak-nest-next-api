@@ -3,6 +3,7 @@ import Controller from '../app/controllers/Controller';
 
 const controllerRouter = Router();
 
-controllerRouter.post('/send', Controller.index);
+controllerRouter.get('/', Controller.index);
+controllerRouter.post('/login', Controller.login);
 
 export default controllerRouter;

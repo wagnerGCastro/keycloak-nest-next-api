@@ -4,6 +4,6 @@ import controllerRouter from './contorller.routes';
 
 const routes = Router();
 
-routes.use('/controler', controllerRouter);
+routes.use('/controller', controllerRouter);
 
 export default routes;
