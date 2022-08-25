@@ -1,0 +1,123 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# VsCode
+.vscode/
+
+# dependencies
+/node_modules
+_node_modules
+__node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+yarn.lock
+.env
+.env.stage
+env.production
+env.development
+
+# txt
+readme.txt
+
+# docker
+docker-compose.stage.yml
+
+# archives
+/src/public/temp/deletefiles/*
+!/src/public/temp/deletefiles/.gitkeep
+
+/public/temp/deletefiles/*
+!public/temp/deletefiles/.gitkeep
+
+/src/public/temp/uploads/*
+!/src/public/temp/uploads/.gitkeep
+
+/public/temp/uploads/*
+!/public/temp/uploads/.gitkeep
+
+/src/public/temp/outzipped/*
+!/src/public/temp/outzipped/.gitkeep
+
+/public/temp/outzipped/*
+!/public/temp/outzipped/.gitkeep
+
+/src/public/temp/converted/*
+!/src/public/temp/converted/.gitkeep
+
+/public/temp/converted/*
+!/public/temp/converted/.gitkeep
+
+/src/public/temp/videos/*
+!/src/public/temp/videos/.gitkeep
+
+/public/temp/videos/*
+!/public/temp/videos/.gitkeep
+
+/src/public/temp/audios/*
+!/src/public/temp/audios/.gitkeep
+
+/public/temp/audios/*
+!/public/temp/audios/.gitkeep
+
+/src/public/temp/images/*
+!/src/public/temp/images/.gitkeep
+
+/public/temp/images/*
+!/public/temp/images/.gitkeep
+
+
+# docker data
+/.docker/data/apache2/*
+!/.docker/data/apache2/.gitkeep
+
+/.docker/data/mongo/data/*
+!/.docker/data/mongo/data/.gitkeep
+
+/.docker/data/mysql/data/*
+!/.docker/data/mysql/data/.gitkeep
+
+/.docker/data/pgadmin4/data/*
+!/.docker/data/pgadmin4/data/.gitkeep
+
+/.docker/data/postgres/data/*
+!/.docker/data/postgres/data/.gitkeep
+
+/.docker/data/redis/data/*
+!/.docker/data/redis/data/.gitkeep
+
+# docker logs
+/.docker/logs/apache2/*
+!/.docker/logs/apache2/.gitkeep
+
+/.docker/logs/mongo/*
+!/.docker/logs/mongo/.gitkeep
+
+/.docker/logs/mysql/*
+!/.docker/logs/mysql/.gitkeep
+
+/.docker/logs/mysql/*
+!/.docker/logs/mysql/.gitkeep
+
+/.docker/logs/pgadmin4/mysql/*
+!/.docker/logs/pgadmin4/mysql/.gitkeep
+
+/.docker/logs/redis/*
+!/.docker/logs/redis/.gitkeep
