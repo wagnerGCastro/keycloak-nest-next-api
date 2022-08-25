@@ -4,7 +4,7 @@ POST http://localhost:8080/auth/realms/myrealm/protocol/openid-connect/token
 Content-Type: application/json
 
 {
-  "client_id": "wagner_castro",
+  "client_id": "wagner-castro",
   "client_secret": "541095e0-185e-45bd-9b80-440d285fed84",
   "grant_type": "password",
   "username": "wagner.castro",
