@@ -10,14 +10,19 @@ export class AuthController {
 
   @Post('login')
   login(@Body() body) {
-    const result = {
-      username: body.username,
-      password: body.password,
+    const { client_id, client_secret, grant_type, username, password } = body;
+
+    const attributes = {
+      client_id,
+      client_secret,
+      grant_type,
+      username,
+      password,
     };
 
-    console.log(result);
+    console.log(attributes);
 
-    return this.authService.login(body.username, body.password);
+    return this.authService.login(attributes);
   }
 
   //@Role('admin')
@@ -26,7 +31,7 @@ export class AuthController {
   test(@Req() req) {
     console.log(req.user);
     return {
-      name: 'Luiz Carlos',
+      name: 'Wagner Castro',
     };
   }
 }
