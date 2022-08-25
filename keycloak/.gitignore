@@ -11,6 +11,8 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+
+
 # OS
 .DS_Store
 
@@ -40,3 +42,5 @@ api.teste.http
 .history/
 
 .docker/dbdata
+
+keycloak.teste.http
