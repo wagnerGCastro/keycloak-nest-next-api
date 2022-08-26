@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  workspace:
+    build:
+      context: ./.docker/bin/workspace
+    entrypoint: ["/bin/sh","-c"]
+    command:
+    - |
+      dockerize -wait tcp://db:3306 -timeout 40s
+      npm install && npm run start:dev
+    ports:
+      - 3070:3070
+    volumes:
+      - .:/home/node/app
+    extra_hosts: 
+      - "host.docker.internal:172.17.0.1"
+    depends_on: 
+      - db
+
+  db:
+    build: ./.docker/bin/mysql
+    restart: always
+    tty: true
+    volumes:
+      - ./.docker/dbdata:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=fin
+      - MYSQL_ROOT_PASSWORD=root
+
+# //etc/hosts 
+# //C:\Windows\system32\drivers\etc\hosts
+
+# 127.0.0.1 host.docker.internal
+
+  

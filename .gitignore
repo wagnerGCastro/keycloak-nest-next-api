@@ -2,3 +2,6 @@
 keycloak.teste.http
 api.teste.http
 .env.teste
+node_modules
+_node_modules
+__node_modules

@@ -1,14 +1,33 @@
-FROM node:14.15.4-alpine3.12
+FROM node:14.15.4-alpine3.12 as common-build-stage
 
 RUN apk add --no-cache bash
-
-RUN npm install -g @nestjs/cli@8.0.0
-
-ENV DOCKERIZE_VERSION v0.6.1
-RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
-    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
 USER node
 
 WORKDIR /home/node/app
+
+COPY ./ /home/node/app
+
+RUN npm install
+RUN npm run build
+
+ENV HOST 0.0.0.0
+EXPOSE 80
+
+# Dvelopment build stage
+FROM common-build-stage as development-build-stage
+
+ENV NODE_ENV development
+
+CMD ["npm", "run", "start:dev"]
+
+# Production build stage
+FROM common-build-stage as production-build-stage
+
+ENV NODE_ENV production
+
+CMD ["npm", "run", "start:prod"]
+
+
+
+

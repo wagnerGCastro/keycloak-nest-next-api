@@ -22,6 +22,8 @@ export class AuthController {
 
     console.log(attributes);
 
+    // return attributes;
+
     return this.authService.login(attributes);
   }
 
