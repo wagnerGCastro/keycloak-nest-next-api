@@ -1,0 +1,8 @@
+node_modules
+docker-compose.stage.yml
+.env.stage
+readme.txt
+yarn-error.log
+.env.test.local
+coverage
+.vscode
